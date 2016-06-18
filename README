@@ -1,0 +1,34 @@
+This contains the code for the paper titled Improving Survey Aggregation with Sparsely Represented signals. 
+
+Questions can be directed to Forest Agostinelli (fagostin@uci.edu) and Tianlin Shi (tianlins@stanford.edu).
+
+Run
+>> start
+before running any other commands.
+
+---------REPLICATING RESULTS---------
+To replicate the results in figures 4a run
+>> test_gunlaw_sparse
+
+To replicate the results in figure 4b run
+>> test_fework_sparse
+
+We have not yet been given permission to distribute the data for the Xbox dataset for the 2012 presidenial election.
+
+---------GENERAL USE---------
+Right now, the code is only for binary data.
+
+The script experiment/test_general.m contains a shell for with users can run their own experiments.
+Right now it uses the gunlaw dataset and plots the adjusted means. To see the results run
+>> test_general
+
+The user can run it on their own data by replacing the 'samples' variable.
+
+The samples variable is a cell. Each element in the cell represents a timepoint.
+
+IMPORTANT: Please make sure that samples is a Tx1 cell (T is the number of timepoints) 
+and each element in the cell is a double 1xN vector (where N is the number of samples)
+in which each entry in the vector is either a 1 or a 2.
+
+The default method is orthogonal matching pursuit. However, one can switch to the deep neural network method
+by switchig the 'type' variable to 'DNN'. The deep neural network takes a few hours to train.
